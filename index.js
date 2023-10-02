@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const path = require('path');
-const { Triangle, Circle, Square } = require('./lib/shapes'); 
+const path = require('path'); // Import the 'path' module
+const { Triangle, Circle, Square } = require('./lib/shapes');
 
 async function generateLogo() {
   const userInput = await inquirer.prompt([
@@ -53,18 +53,26 @@ async function generateLogo() {
 
   selectedShape.setColor(shapeColor);
 
-  // Generate the SVG file
   const svgContent = selectedShape.render(text, textColor);
 
-  const examplesDirectory = path.join(__dirname, 'examples');
+  // Define the path to the "examples" directory
+  const examplesDirectory = path.join(__dirname, 'examples'); // __dirname refers to the current directory
 
-  fs.writeFileSync(path.join(examplesDirectory, 'logo.svg'), svgContent);
+  // Specify the full path to the "logo.svg" file within the "examples" directory
+  const logoFilePath = path.join(examplesDirectory, 'logo.svg');
+
+  // Write the SVG file to the "examples" directory
+  fs.writeFileSync(logoFilePath, svgContent);
+
+  console.log('Generated logo.svg in the examples directory');
 }
 
 function isValidColor(color) {
   // Implement a function to validate color inputs (e.g., hex or valid keyword)
   // Return true if valid, false otherwise
-  return true; //placeholder for validation logic
+  return true; // Placeholder for validation logic
 }
 
 generateLogo();
+
+
