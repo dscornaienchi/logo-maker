@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const path = require('path');
 const { Triangle, Circle, Square } = require('./lib/shapes'); 
 
 async function generateLogo() {
@@ -54,9 +55,10 @@ async function generateLogo() {
 
   // Generate the SVG file
   const svgContent = selectedShape.render(text, textColor);
-  fs.writeFileSync('logo.svg', svgContent);
 
-  console.log('Generated logo.svg');
+  const examplesDirectory = path.join(__dirname, 'examples');
+
+  fs.writeFileSync(path.join(examplesDirectory, 'logo.svg'), svgContent);
 }
 
 function isValidColor(color) {
