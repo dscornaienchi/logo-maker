@@ -6,7 +6,7 @@ The code included in this repository is used to generate a logo automatically wi
 * When the user is prompted for text, they can enter up to three characters
 * When the user is prompted for the text color, they can enter a color keyword OR a hexadecimal number
 * When the user is prompted for a shape, they are presented with a list of shapes to choose from: circle, triangle, and square
-* When the user is I am prompted for the shape's color, they can enter a color keyword (OR a hexadecimal number)
+* When the user is prompted for the shape's color, they can enter a color keyword (OR a hexadecimal number)
 * When the user has entered the input for all the prompts, THEN an SVG file is created named `logo.svg`, and the output text "Generated logo.svg" is printed in the command line
 * When the user opens the `logo.svg` file in a browser, they are shown a 300x200 pixel image that matches the criteria entered
 

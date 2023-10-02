@@ -1,9 +1,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const { Triangle, Circle, Square } = require('./lib/shapes'); // Adjust the path if needed
+const { Triangle, Circle, Square } = require('./lib/shapes'); 
 
 async function generateLogo() {
-  // Use inquirer to collect user input
   const userInput = await inquirer.prompt([
     {
       type: 'input',
@@ -30,7 +29,6 @@ async function generateLogo() {
 
   const { text, textColor, shape, shapeColor } = userInput;
 
-  // Create the selected shape and set its color
   let selectedShape;
   switch (shape.toLowerCase()) {
     case 'circle':
@@ -47,6 +45,11 @@ async function generateLogo() {
       return;
   }
 
+  if (!isValidColor(shapeColor)) {
+    console.error('Invalid shape color');
+    return;
+  }
+
   selectedShape.setColor(shapeColor);
 
   // Generate the SVG file
@@ -54,6 +57,12 @@ async function generateLogo() {
   fs.writeFileSync('logo.svg', svgContent);
 
   console.log('Generated logo.svg');
+}
+
+function isValidColor(color) {
+  // Implement a function to validate color inputs (e.g., hex or valid keyword)
+  // Return true if valid, false otherwise
+  return true; //placeholder for validation logic
 }
 
 generateLogo();
