@@ -46,17 +46,12 @@ async function generateLogo() {
       return;
   }
 
-  if (!isValidColor(shapeColor)) {
-    console.error('Invalid shape color');
-    return;
-  }
-
   selectedShape.setColor(shapeColor);
 
   const svgContent = selectedShape.render(text, textColor);
 
   // Define the path to the "examples" directory
-  const examplesDirectory = path.join(__dirname, 'examples'); // __dirname refers to the current directory
+  const examplesDirectory = path.join(__dirname, 'examples'); 
 
   // Specify the full path to the "logo.svg" file within the "examples" directory
   const logoFilePath = path.join(examplesDirectory, 'logo.svg');
@@ -65,12 +60,6 @@ async function generateLogo() {
   fs.writeFileSync(logoFilePath, svgContent);
 
   console.log('Generated logo.svg in the examples directory');
-}
-
-function isValidColor(color) {
-  // Implement a function to validate color inputs (e.g., hex or valid keyword)
-  // Return true if valid, false otherwise
-  return true; // Placeholder for validation logic
 }
 
 generateLogo();
