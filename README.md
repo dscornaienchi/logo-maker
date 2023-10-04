@@ -14,7 +14,7 @@ The code included in this repository is used to generate a logo automatically wi
 
 The Github repository can be found here: https://github.com/dscornaienchi/logo-maker
 
-A walkthrough video can be found here: 
+A walkthrough video can be found here: https://drive.google.com/file/d/1FEaXReipGPfE4ktnhzfvL0cE7X2L9FmX/view?usp=sharing 
 
 ## Credits
 
